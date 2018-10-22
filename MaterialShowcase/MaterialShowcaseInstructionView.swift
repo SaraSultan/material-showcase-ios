@@ -62,6 +62,7 @@ public class MaterialShowcaseInstructionView: UIView {
   
   /// Configures and adds primary label view
   private func addPrimaryLabel() {
+    if primaryLabel == nil{
     primaryLabel = UILabel()
     
     if let font = primaryTextFont {
@@ -94,10 +95,12 @@ public class MaterialShowcaseInstructionView: UIView {
                                 height: 0)
     primaryLabel.sizeToFitHeight()
     addSubview(primaryLabel)
+    }
   }
   
   /// Configures and adds secondary label view
   private func addSecondaryLabel() {
+    if secondaryLabel == nil {
     secondaryLabel = UILabel()
     if let font = secondaryTextFont {
       secondaryLabel.font = font
@@ -117,6 +120,7 @@ public class MaterialShowcaseInstructionView: UIView {
     secondaryLabel.sizeToFitHeight()
     addSubview(secondaryLabel)
     frame = CGRect(x: frame.minX, y: frame.minY, width: getWidth(), height: primaryLabel.frame.height + secondaryLabel.frame.height)
+    }
   }
   
   //Calculate width per device
