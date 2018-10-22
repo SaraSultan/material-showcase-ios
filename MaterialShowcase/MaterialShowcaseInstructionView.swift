@@ -134,7 +134,9 @@ public class MaterialShowcaseInstructionView: UIView {
   /// Overrides this to add subviews. They will be drawn when calling show()
   public override func layoutSubviews() {
     super.layoutSubviews()
-    
+    for view in self.subviews {
+        view.removeFromSuperview()
+    }
     addPrimaryLabel()
     addSecondaryLabel()
     
